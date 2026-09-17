@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NAZWORKS LTD. — project delivery consulting and software for Apple platforms. Calgary, Alberta.">
+<title>NazWorks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    --ground:#F4F6F6; --surface:#FFFFFF;
+    --ink:#0E1516; --ink-2:#3A4749; --muted:#6B797B;
+    --rule:#D6DDDD; --rule-strong:#B8C3C3;
+    --accent:#0B5F5A; --accent-soft:#E2EDEB;
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#0C1112; --surface:#131A1B;
+      --ink:#E9EEED; --ink-2:#B4C0BF; --muted:#8B9998;
+      --rule:#243030; --rule-strong:#354344;
+      --accent:#5EC8BE; --accent-soft:#15292A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0C1112; --surface:#131A1B;
+    --ink:#E9EEED; --ink-2:#B4C0BF; --muted:#8B9998;
+    --rule:#243030; --rule-strong:#354344;
+    --accent:#5EC8BE; --accent-soft:#15292A;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground); color:var(--ink);
+    font-family:var(--body); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding-inline:24px}
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    border-bottom:1px solid var(--rule);
+    padding-block:16px;
+    display:flex; flex-wrap:wrap; gap:12px 28px; align-items:baseline;
+  }
+  .mark{
+    font-family:var(--display); font-weight:700; font-size:19px;
+    letter-spacing:-.02em; color:var(--ink); text-decoration:none;
+  }
+  .mark span{color:var(--accent)}
+  .masthead nav{margin-left:auto; display:flex; flex-wrap:wrap; gap:22px}
+  .masthead nav a{
+    font-family:var(--mono); font-size:12px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--muted); text-decoration:none;
+    padding-block:2px; border-bottom:1px solid transparent;
+  }
+  .masthead nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:72px 44px; max-width:44ch}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 26px;
+  }
+  .hero h1{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(2.3rem,6.2vw,3.9rem); line-height:1.04;
+    letter-spacing:-.035em; text-wrap:balance; margin:0;
+  }
+  .hero h1 em{font-style:normal; color:var(--accent)}
+  .hero .lede{
+    font-size:1.16rem; color:var(--ink-2); margin:22px 0 0; max-width:54ch;
+  }
+
+  /* ---------- engagement phases (real sequence → ordered device) ---------- */
+  .phases{padding-block:8px 72px}
+  .phases-label{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--muted);
+    padding-bottom:10px; border-bottom:1px solid var(--rule); margin:0 0 14px;
+  }
+  .track{display:grid; grid-template-columns:15fr 20fr 50fr 15fr; gap:3px}
+  .track .seg{padding-top:9px; border-top:3px solid var(--rule-strong)}
+  .track .seg.on{border-top-color:var(--accent)}
+  .track .seg b{
+    display:block; font-family:var(--display); font-weight:600;
+    font-size:13px; letter-spacing:-.01em; color:var(--ink);
+  }
+  .track .seg i{
+    display:block; font-family:var(--mono); font-style:normal;
+    font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- sections ---------- */
+  section{border-top:1px solid var(--rule); padding-block:56px}
+  .sec-head{
+    font-family:var(--mono); font-size:12px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 30px;
+  }
+  h2{
+    font-family:var(--display); font-weight:600;
+    font-size:1.65rem; letter-spacing:-.02em; line-height:1.2;
+    margin:0 0 12px; text-wrap:balance;
+  }
+  p{margin:0 0 14px; max-width:64ch}
+  p:last-child{margin-bottom:0}
+
+  .duo{display:grid; grid-template-columns:1fr 1fr; gap:48px}
+  .duo .tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 8px;
+  }
+
+  .principles{display:grid; gap:0; margin:0}
+  .principles div{
+    display:grid; grid-template-columns:minmax(150px,210px) 1fr; gap:10px 36px;
+    padding-block:20px; border-top:1px solid var(--rule);
+  }
+  .principles div:first-child{border-top:none; padding-top:0}
+  .principles dt{
+    font-family:var(--display); font-weight:600; font-size:1rem;
+    letter-spacing:-.01em; margin:0;
+  }
+  .principles dd{margin:0; color:var(--ink-2)}
+
+  /* ---------- product ---------- */
+  .product{
+    background:var(--surface); border:1px solid var(--rule);
+    padding:26px 28px; max-width:none;
+    display:grid; grid-template-columns:1fr auto; gap:18px 28px; align-items:start;
+  }
+  .product h3{
+    font-family:var(--display); font-weight:600; font-size:1.2rem;
+    letter-spacing:-.015em; margin:0 0 8px;
+  }
+  .product p{color:var(--ink-2); margin:0}
+  .status{
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--accent);
+    background:var(--accent-soft); padding:5px 10px; white-space:nowrap;
+  }
+
+  /* ---------- colophon / legal ---------- */
+  .colophon{display:grid; grid-template-columns:1fr 1fr; gap:40px}
+  .entity{
+    font-family:var(--mono); font-size:13px; line-height:1.85;
+    font-variant-numeric:tabular-nums; color:var(--ink-2); margin:0;
+  }
+  .entity .legal{
+    display:block; color:var(--ink); font-weight:500;
+    letter-spacing:.04em; margin-bottom:6px;
+  }
+  .entity a{color:var(--accent); text-decoration:none}
+  .entity a:hover{text-decoration:underline}
+  .rows{margin:22px 0 0; display:grid; gap:7px}
+  .rows div{
+    display:grid; grid-template-columns:78px 1fr; gap:14px;
+    font-family:var(--mono); font-size:13px; font-variant-numeric:tabular-nums;
+  }
+  .rows dt{color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:.08em; padding-top:2px}
+  .rows dd{margin:0}
+  .rows a{color:var(--accent); text-decoration:none}
+  .rows a:hover{text-decoration:underline}
+
+  footer{
+    border-top:1px solid var(--rule); padding-block:28px 44px;
+    display:flex; flex-wrap:wrap; gap:10px 26px; align-items:baseline;
+    font-family:var(--mono); font-size:12px; color:var(--muted);
+  }
+  footer a{color:var(--muted); text-decoration:none; border-bottom:1px solid var(--rule-strong)}
+  footer a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+  footer .sep{margin-left:auto}
+
+  a:focus-visible,nav a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  @media (max-width:720px){
+    body{font-size:16px}
+    .hero{padding-block:52px 34px}
+    .duo,.colophon{grid-template-columns:1fr; gap:34px}
+    .track{grid-template-columns:1fr 1fr; gap:3px 16px; row-gap:16px}
+    .principles div{grid-template-columns:1fr; gap:4px}
+    .product{grid-template-columns:1fr}
+    .masthead nav{margin-left:0; width:100%; gap:18px}
+  }
+</style>
+<style>
+  html{color-scheme:light dark}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="mark" href="#top">Naz<span>Works</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <p class="eyebrow">Project delivery &amp; software — Calgary, Alberta</p>
+    <h1>Most projects don't fail on <em>execution</em>.</h1>
+    <p class="lede">They fail on unclear ownership and information that arrives too late to act on. NazWorks plans, structures, and runs complex work for organizations that need it delivered — and builds its own software for Apple platforms.</p>
+  </div>
+
+  <div class="phases">
+    <p class="phases-label">Typical engagement shape</p>
+    <div class="track">
+      <div class="seg on"><b>Discovery</b><i>1–2 weeks</i></div>
+      <div class="seg on"><b>Structure</b><i>2–3 weeks</i></div>
+      <div class="seg on"><b>Delivery</b><i>ongoing</i></div>
+      <div class="seg"><b>Handover</b><i>1–2 weeks</i></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <p class="sec-head">What we do</p>
+    <div class="duo">
+      <div>
+        <p class="tag">Consulting</p>
+        <h2>Delivery &amp; project management</h2>
+        <p>Hands-on project and program management for teams shipping real work. Planning and scoping, delivery structure, stakeholder communication, risk management, and the unglamorous coordination that keeps complicated projects moving.</p>
+        <p>Engagements are available on a contract basis, on site in Calgary or remote.</p>
+      </div>
+      <div>
+        <p class="tag">Products</p>
+        <h2>Software for Apple platforms</h2>
+        <p>NazWorks designs and develops its own software for iPhone, iPad, and Mac. Everything is built in-house, with a focus on tools that are genuinely useful day to day rather than feature checklists.</p>
+        <p>Our applications store your data on your device and are built without tracking or advertising.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <p class="sec-head">How we work</p>
+    <h2>Small scope, clear ownership, steady delivery.</h2>
+    <dl class="principles">
+      <div>
+        <dt>Decisions before tasks</dt>
+        <dd>Work stalls on unmade decisions far more often than on unfinished tasks. Every engagement starts by naming who decides what, and by when.</dd>
+      </div>
+      <div>
+        <dt>Status you can act on</dt>
+        <dd>Regular, honest reporting — including when something is off track. A status report that never says "no" is not a status report.</dd>
+      </div>
+      <div>
+        <dt>Structure that outlasts us</dt>
+        <dd>The goal is a team that runs the work without us. Handover is planned from the first week, not improvised at the end.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="products">
+    <p class="sec-head">Products</p>
+    <div class="product">
+      <div>
+        <h3>Misfit Journal</h3>
+        <p>A training log for iPhone and Mac. Built for people who structure their own programs and want their history readable, portable, and entirely their own.</p>
+      </div>
+      <span class="status">In development</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="sec-head">Contact</p>
+    <div class="colophon">
+      <div>
+        <h2>Get in touch</h2>
+        <p>For consulting inquiries or product support, email <a href="mailto:hello@nazworks.net" style="color:var(--accent)">hello@nazworks.net</a>. We reply to everything.</p>
+      </div>
+      <div>
+        <p class="entity">
+          <span class="legal">NAZWORKS LTD.</span>
+          Incorporated in Alberta, Canada
+        </p>
+        <dl class="rows">
+          <div><dt>Address</dt><dd>99 Woodborough Road SW<br>Calgary, Alberta&nbsp; T2W 5C2<br>Canada</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:hello@nazworks.net">hello@nazworks.net</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+15879997069">+1 (587) 999-7069</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 NAZWORKS LTD.</span>
+    <span>99 Woodborough Road SW, Calgary, Alberta T2W 5C2, Canada</span>
+    <span class="sep"><a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
